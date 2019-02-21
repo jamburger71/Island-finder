@@ -10,14 +10,14 @@ namespace CodingChallenges.Week1
 			Console.WriteLine("- The map denotes land and water tiles with a 1 and 0 respectively");
 			Console.WriteLine("- An island is one or more directly adjacent land tiles (vertically or horizontally, but not diagonally)\n");
 			Console.WriteLine("Write a function to count the number of islands on the map below:\n");
-
-			var map = new int[5, 5]
+			
+			var map = new int[5, 15]
 			{
-				{ 1, 0, 0, 1, 1 },
-				{ 0, 1, 0, 0, 0 },
-				{ 0, 0, 1, 1, 0 },
-				{ 0, 1, 1, 0, 0 },
-				{ 1, 0, 0, 1, 1 }
+				{ 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0 },
+				{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1 },
+				{ 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1 },
+				{ 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0 },
+				{ 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0 }
 			};
 
 			for (var i = 0; i < map.GetLength(0); i++)
@@ -41,6 +41,7 @@ namespace CodingChallenges.Week1
 			Console.WriteLine("Actual count: " + CountIslands(map));
 			Console.WriteLine("Mean runtime: " + duration);
 			Console.ReadLine();
+			Generate();
 		}
 
 		public static int CountIslands(int[,] map)
@@ -69,14 +70,27 @@ namespace CodingChallenges.Week1
 							{
 								count -= 1;
 							}
+
 						}
+
 					}
+
 				}
+
 			}
-			
-			return count;
+
+		return count;
+
 		}	
-	
+		public static void Generate()
+		{
+			int min = 0;
+			int max = 2;
+			Random random = new Random();
+            int number= random.Next(min, max);
+			Console.WriteLine(number);
+			Console.ReadLine();
+		}
 	}	
 
 }
