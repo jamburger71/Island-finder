@@ -36,17 +36,17 @@ namespace CodingChallenges.Week1
 				Console.WriteLine();
 			}
 
-			//var start = DateTime.Now;
-			//for (var i = 0; i < 100000; i++)
-			//{
-			//CountIslands(map);
-			//}
-			//var duration = (DateTime.Now - start).TotalMilliseconds;
+			var start = DateTime.Now;
+			for (var i = 0; i < 100000; i++)
+			{
+			CountIslands(map);
+			}
+			var duration = (DateTime.Now - start).TotalMilliseconds;
 
 			Console.WriteLine();
 			Console.WriteLine("Target count: Unknown");
 			Console.WriteLine("Actual count: " + CountIslands(map));
-			//Console.WriteLine("Mean runtime: " + duration);
+			Console.WriteLine("Mean runtime: " + duration);
 			Console.ReadLine();
 			
 		}
