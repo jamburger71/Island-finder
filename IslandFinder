@@ -36,17 +36,17 @@ namespace CodingChallenges.Week1
 				Console.WriteLine();
 			}
 
-			var start = DateTime.Now;
-			for (var i = 0; i < 100000; i++)
-			{
-			CountIslands(map);
-			}
-			var duration = (DateTime.Now - start).TotalMilliseconds;
+			//var start = DateTime.Now;
+			//for (var i = 0; i < 100000; i++)
+			//{
+			//CountIslands(map);
+			//}
+			//var duration = (DateTime.Now - start).TotalMilliseconds;
 
 			Console.WriteLine();
 			Console.WriteLine("Target count: Unknown");
 			Console.WriteLine("Actual count: " + CountIslands(map));
-			Console.WriteLine("Mean runtime: " + duration);
+			//Console.WriteLine("Mean runtime: " + duration);
 			Console.ReadLine();
 			
 		}
@@ -57,9 +57,9 @@ namespace CodingChallenges.Week1
 			var depth = map.GetLength(1);
 			var count = 0;
 
-			for (var i = 0; i < map.GetLength(0); i++)
+			for (var i = 0; i < 5; i++)
 			{
-				for (var j = 0; j < map.GetLength(1); j++)
+				for (var j = 0; j < 5; j++)
 				{
 					if (map[i, j] == 1)
 					{
@@ -70,6 +70,22 @@ namespace CodingChallenges.Week1
 							{
 								count -= 1;
 							}
+							if (i>0)
+							{
+								if (map[i-1,j] == 1)
+								{
+									if (map[i,j-1] == 1)
+									{
+										if (map[i-1,j-1] == 1)
+										{
+											count += 1;
+											var l=j-1;
+											var k=i-1;
+										}
+									}
+								}
+							}
+								
 						}
 						if (i>0)
 						{
@@ -77,17 +93,15 @@ namespace CodingChallenges.Week1
 							{
 								count -= 1;
 							}
-
 						}
-
 					}
-
 				}
-
 			}
-
-		return count;
-
+			if (count <= 0)
+			{
+				Console.WriteLine("A mistake was made!");
+			}
+			return count;
 		}
 	}	
 }
