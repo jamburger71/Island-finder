@@ -8,8 +8,9 @@ namespace CodingChallenges.Week1
 		{
 			Console.WriteLine("Week 1 Challenge: Count the islands\n");
 			Console.WriteLine("- The map denotes land and water tiles with a 1 and 0 respectively");
+			Console.WriteLine("- The map is also randomly generated to guarantee accurate results");
 			Console.WriteLine("- An island is one or more directly adjacent land tiles (vertically or horizontally, but not diagonally)\n");
-			Console.WriteLine("Write a function to count the number of islands on the map below:\n");
+			Console.WriteLine("The randomly generated map is shown below:\n");
 			
 			Random random = new Random();
 			
