@@ -11,13 +11,20 @@ namespace CodingChallenges.Week1
 			Console.WriteLine("- An island is one or more directly adjacent land tiles (vertically or horizontally, but not diagonally)\n");
 			Console.WriteLine("Write a function to count the number of islands on the map below:\n");
 			
-			var map = new int[5, 15]
+			Random random = new Random();
+			
+			int OneOne = random.Next(0,2); int TwoOne = random.Next(0,2); int ThreeOne = random.Next(0,2); int FourOne = random.Next(0,2); int FiveOne = random.Next(0,2);
+			int OneTwo = random.Next(0,2); int TwoTwo = random.Next(0,2); int ThreeTwo = random.Next(0,2); int FourTwo = random.Next(0,2); int FiveTwo = random.Next(0,2);
+			int OneThree = random.Next(0,2); int TwoThree = random.Next(0,2); int ThreeThree = random.Next(0,2); int FourThree = random.Next(0,2); int FiveThree = random.Next(0,2);
+			int OneFour = random.Next(0,2); int TwoFour = random.Next(0,2); int ThreeFour = random.Next(0,2); int FourFour = random.Next(0,2); int FiveFour = random.Next(0,2);
+			int OneFive = random.Next(0,2); int TwoFive = random.Next(0,2); int ThreeFive = random.Next(0,2); int FourFive = random.Next(0,2); int FiveFive = random.Next(0,2);
+			var map = new int[5, 5]
 			{
-				{ 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0 },
-				{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1 },
-				{ 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1 },
-				{ 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0 },
-				{ 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0 }
+				{ OneOne, TwoOne, ThreeOne, FourOne, FiveOne },
+				{ OneTwo, TwoTwo, ThreeTwo, FourTwo, FiveTwo },
+				{ OneThree, TwoThree, ThreeThree, FourThree, FiveThree },
+				{ OneFour, TwoFour, ThreeFour, FourFour, FiveFour },
+				{ OneFive, TwoFive, ThreeFive, FourFive, FiveFive }
 			};
 
 			for (var i = 0; i < map.GetLength(0); i++)
@@ -37,11 +44,11 @@ namespace CodingChallenges.Week1
 			var duration = (DateTime.Now - start).TotalMilliseconds;
 
 			Console.WriteLine();
-			Console.WriteLine("Target count: 6");
+			Console.WriteLine("Target count: Unknown");
 			Console.WriteLine("Actual count: " + CountIslands(map));
 			Console.WriteLine("Mean runtime: " + duration);
 			Console.ReadLine();
-			Generate();
+			
 		}
 
 		public static int CountIslands(int[,] map)
@@ -80,8 +87,7 @@ namespace CodingChallenges.Week1
 			}
 
 		return count;
+
 		}
 	}	
-
 }
-
